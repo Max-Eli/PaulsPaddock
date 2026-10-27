@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+:root {
+  /* Graphite matches the background of the shop's logo artwork. */
+  --ink: #1c1c1c;
+  --ink-2: #252525;
+  --ink-3: #2f2f2f;
+  --ink-line: rgba(255, 255, 255, 0.12);
+  --ink-muted: #a3a29d;
+  --paper: #f2f0eb;
+  --paper-2: #e7e4dc;
+  --paper-line: rgba(28, 28, 28, 0.14);
+  --paper-muted: #63625d;
+  /* Motorsport tricolor from the logo's flags. Used as a detail, not a theme. */
+  --m-light: #6db4ef;
+  --m-dark: #1f4e9c;
+  --m-red: #d9262e;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-ink-line: var(--ink-line);
+  --color-ink-muted: var(--ink-muted);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-line: var(--paper-line);
+  --color-paper-muted: var(--paper-muted);
+  --color-m-light: var(--m-light);
+  --color-m-dark: var(--m-dark);
+  --color-m-red: var(--m-red);
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-plex-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--m-red);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--m-light);
+  outline-offset: 3px;
+}
+
+@layer components {
+  /* Page container and vertical rhythm, shared by every section. */
+  .wrap {
+    margin-inline: auto;
+    max-width: 80rem;
+    padding-inline: 1rem;
+  }
+  .section-y {
+    padding-block: 5rem;
+  }
+  @media (min-width: 640px) {
+    .wrap {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .wrap {
+      padding-inline: 2.5rem;
+    }
+    .section-y {
+      padding-block: 7rem;
+    }
+  }
+
+  /* Condensed headline cut of Archivo, via its width axis. */
+  .display {
+    font-stretch: 68%;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  .wordmark {
+    font-stretch: 115%;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+  }
+
+  .kicker {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  /* Dotted leader between a service name and its price, like a shop menu board. */
+  .leader {
+    flex: 1;
+    min-width: 1.5rem;
+    border-bottom: 1px dotted currentColor;
+    opacity: 0.35;
+    transform: translateY(-0.3em);
+  }
+
+  /* Buttons. Square corners on purpose: it matches the hairline grid. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.35rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.2;
+    transition:
+      background-color 150ms,
+      border-color 150ms,
+      color 150ms;
+  }
+  .btn-light {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .btn-light:hover {
+    background: #fff;
+  }
+  .btn-dark {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-dark:hover {
+    background: var(--ink-3);
+  }
+  .btn-ghost-light {
+    border: 1px solid var(--ink-line);
+    color: var(--paper);
+  }
+  .btn-ghost-light:hover {
+    border-color: rgba(242, 240, 235, 0.6);
+  }
+  .btn-ghost-dark {
+    border: 1px solid var(--paper-line);
+    color: var(--ink);
+  }
+  .btn-ghost-dark:hover {
+    border-color: var(--ink);
+  }
+
+  /* Text link with an underline that tightens on hover. */
+  .link {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+    text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+    transition: text-decoration-color 150ms;
+  }
+  .link:hover {
+    text-decoration-color: currentColor;
+  }
+
+  /* Accordion: hide the default disclosure triangle. */
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Long-form article text for blog posts. */
+  .prose {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #2c2c2a;
+  }
+  .prose > * + * {
+    margin-top: 1.25em;
+  }
+  .prose h2 {
+    margin-top: 2.25em;
+    font-size: 1.75rem;
+    line-height: 1.15;
+    font-weight: 700;
+    font-stretch: 85%;
+    color: var(--ink);
+    scroll-margin-top: 7rem;
+  }
+  .prose h3 {
+    margin-top: 1.75em;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .prose h2 + *,
+  .prose h3 + * {
+    margin-top: 0.75em;
+  }
+  .prose strong {
+    font-weight: 650;
+    color: var(--ink);
+  }
+  .prose a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: var(--m-red);
+  }
+  .prose a:hover {
+    text-decoration-thickness: 2px;
+  }
+  .prose ul,
+  .prose ol {
+    padding-left: 1.25em;
+  }
+  .prose ul {
+    list-style: none;
+  }
+  .prose ul > li {
+    position: relative;
+  }
+  .prose ul > li::before {
+    content: "";
+    position: absolute;
+    left: -1.1em;
+    top: 0.75em;
+    width: 0.45em;
+    height: 2px;
+    background: var(--m-red);
+  }
+  .prose ol {
+    list-style: decimal;
+  }
+  .prose ol > li::marker {
+    font-family: var(--font-plex-mono);
+    font-size: 0.85em;
+    color: var(--paper-muted);
+  }
+  .prose li + li {
+    margin-top: 0.5em;
+  }
+  .prose em {
+    font-style: italic;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+  }
+}
