@@ -23,8 +23,8 @@ export default async function BookPage(props: PageProps<"/book">) {
     <>
       <PageHero
         crumbs={[{ name: "Book a service", href: "/book" }]}
-        kicker="Book a service"
-        title="Tell us about the car."
+        kicker="Appointments"
+        title="Book a service"
         intro={`Send a request and we’ll call you back to confirm a time. Prefer to talk it through? Call ${BRAND.phone}.`}
       >
         <ReviewsLine tone="dark" />

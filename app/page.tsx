@@ -8,6 +8,7 @@ import { PriceBoard } from "@/app/components/PriceBoard";
 import { ProcessSteps } from "@/app/components/ProcessSteps";
 import { Reviews, ReviewsLine } from "@/app/components/Reviews";
 import { ServiceTiles } from "@/app/components/ServiceGrid";
+import { MakesStrip } from "@/app/components/MakesStrip";
 import { Stripe } from "@/app/components/Stripe";
 import { TrustStrip } from "@/app/components/TrustStrip";
 import { BMW_ISSUES } from "@/app/lib/bmw";
@@ -15,6 +16,7 @@ import { getAllPosts } from "@/app/lib/blog";
 import { BRAND, DIRECTIONS_URL } from "@/app/lib/content";
 import { ALL_FAQS } from "@/app/lib/faqs";
 import { PHOTOS } from "@/app/lib/photos";
+import { SERVICES } from "@/app/lib/services";
 
 const HOME_FAQS = ALL_FAQS.filter((f) =>
   [
@@ -37,16 +39,16 @@ export default function Home() {
       <section className="bg-ink text-paper">
         <div className="wrap pt-12 lg:pt-16">
           <p className="kicker text-ink-muted">
-            Independent repair & detailing · {"Palm Bay, FL"}
+            Paul’s Paddock Automotive Repair & Detailing
           </p>
-          <h1 className="display mt-6 text-[clamp(3.25rem,8.6vw,8rem)]">
-            <span className="block">BMW specialists.</span>
-            <span className="block text-ink-muted">Every make welcome.</span>
+          <h1 className="display mt-6 text-[clamp(3rem,6.2vw,5.75rem)]">
+            <span className="block">BMW & European auto repair</span>
+            <span className="block text-ink-muted">{"in Palm Bay,\u00a0FL"}</span>
           </h1>
           <div className="mt-8 flex flex-col gap-8 lg:mt-10 lg:flex-row lg:items-end lg:justify-between">
             <p className="max-w-xl text-lg leading-relaxed text-paper/85">
-              Diagnostics, brakes, suspension, engine work and routine
-              maintenance in Brevard County. Tell us what the car is doing and
+              An independent shop that specializes in BMW and services every
+              make, foreign or domestic. Tell us what the car is doing and
               we’ll tell you straight what it needs.
             </p>
             <div className="flex shrink-0 flex-wrap gap-3">
@@ -87,16 +89,19 @@ export default function Home() {
             <div>
               <p className="kicker text-paper-muted">Services</p>
               <h2 className="display mt-4 max-w-3xl text-[clamp(2.75rem,6vw,4.75rem)]">
-                From oil changes to engine swaps.
+                Auto repair & maintenance
               </h2>
             </div>
             <Link href="/services" className="group inline-flex items-center gap-2 font-semibold">
-              All services
+              All {SERVICES.length} services
               <Arrow className="group-hover:translate-x-1" />
             </Link>
           </div>
           <div className="mt-12 lg:mt-16">
             <ServiceTiles />
+          </div>
+          <div className="mt-16 border-t border-paper-line pt-12 lg:mt-20">
+            <MakesStrip />
           </div>
         </div>
       </section>
@@ -117,9 +122,9 @@ export default function Home() {
           </figure>
 
           <div className="lg:col-span-7">
-            <p className="kicker text-ink-muted">The specialty</p>
+            <p className="kicker text-ink-muted">Our specialty</p>
             <h2 className="display mt-4 text-[clamp(2.75rem,6vw,4.75rem)]">
-              Built around BMW.
+              BMW specialists
             </h2>
             <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-paper/85">
               <p>
@@ -154,9 +159,9 @@ export default function Home() {
       <section className="bg-paper">
         <div className="wrap section-y grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <p className="kicker text-paper-muted">Prices</p>
+            <p className="kicker text-paper-muted">Pricing</p>
             <h2 className="display mt-4 text-[clamp(2.75rem,5vw,4.75rem)]">
-              Posted up front.
+              Posted prices
             </h2>
             <p className="mt-6 max-w-sm text-lg leading-relaxed text-paper-muted">
               The jobs we do every day, priced before you walk in. Anything
@@ -176,9 +181,9 @@ export default function Home() {
       {/* Process */}
       <section className="border-y border-paper-line bg-paper-2">
         <div className="wrap section-y">
-          <p className="kicker text-paper-muted">How a visit works</p>
+          <p className="kicker text-paper-muted">What to expect</p>
           <h2 className="display mt-4 max-w-3xl text-[clamp(2.75rem,6vw,4.75rem)]">
-            No surprises on the bill.
+            How a visit works
           </h2>
           <div className="mt-12 lg:mt-16">
             <ProcessSteps />
@@ -193,9 +198,9 @@ export default function Home() {
         <div className="wrap section-y">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="kicker text-paper-muted">From the Paddock</p>
+              <p className="kicker text-paper-muted">From the blog</p>
               <h2 className="display mt-4 text-[clamp(2.75rem,6vw,4.75rem)]">
-                Advice from the shop.
+                Car care advice
               </h2>
             </div>
             <Link href="/blog" className="group inline-flex items-center gap-2 font-semibold">
@@ -219,7 +224,7 @@ export default function Home() {
           <div className="lg:col-span-4">
             <p className="kicker text-paper-muted">FAQ</p>
             <h2 className="display mt-4 text-[clamp(2.75rem,5vw,4.75rem)]">
-              Good questions.
+              Frequently asked questions
             </h2>
             <Link href="/faq" className="group mt-8 inline-flex items-center gap-2 font-semibold">
               All questions
@@ -238,7 +243,7 @@ export default function Home() {
           <div className="lg:col-span-5">
             <p className="kicker text-paper-muted">Visit</p>
             <h2 className="display mt-4 text-[clamp(2.75rem,6vw,4.75rem)]">
-              Find the shop.
+              Visit the shop
             </h2>
             <dl className="mt-10 space-y-6">
               <div>

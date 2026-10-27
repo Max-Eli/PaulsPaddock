@@ -23,19 +23,19 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const description =
-  "Independent BMW specialist in Palm Bay, FL. Brakes, diagnostics, engine, suspension, tires and detailing for every make. Posted prices, rated 5.0 on Google.";
+  "BMW and European auto repair in Palm Bay, FL. Brakes, diagnostics, engine, suspension, tires and detailing for every make. Posted prices, rated 5.0 on Google.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BRAND.siteUrl),
   title: {
-    default: "Paul’s Paddock | BMW Specialist & Auto Repair in Palm Bay, FL",
+    default: "Paul’s Paddock | BMW & European Auto Repair in Palm Bay, FL",
     template: "%s | Paul’s Paddock",
   },
   description,
   openGraph: {
     type: "website",
     siteName: BRAND.name,
-    title: "Paul’s Paddock | BMW Specialist & Auto Repair in Palm Bay, FL",
+    title: "Paul’s Paddock | BMW & European Auto Repair in Palm Bay, FL",
     description,
     images: [{ url: "/og.jpg", width: 1200, height: 630 }],
   },

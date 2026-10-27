@@ -4,7 +4,7 @@ description: A check engine light points to a system, not a part. How fault code
 date: 2026-09-15
 category: Diagnostics
 photo: g30Engine
-service: diagnostics
+service: check-engine-light
 ---
 
 Your car talks to you. It just doesn't use words. It warns you with dashboard lights, odd noises, rough idles and sluggish acceleration. Ignore those signs and small problems tend to become big ones.
@@ -53,4 +53,4 @@ Many European cars, BMW included, also show their own warnings, such as "Drivetr
 
 ## The bottom line
 
-The light is the start of the conversation. A proper diagnostic finds the cause, so you only pay for the repair you actually need. Our [diagnostic service](/services/diagnostics) is $100. [Book one online](/book?service=diagnostic).
+The light is the start of the conversation. A proper diagnostic finds the cause, so you only pay for the repair you actually need. Our [check engine light diagnosis](/services/check-engine-light) is $100. [Book one online](/book?service=diagnostic).

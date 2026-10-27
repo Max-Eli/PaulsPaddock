@@ -44,8 +44,8 @@ export default function AboutPage() {
     <>
       <PageHero
         crumbs={[{ name: "About", href: "/about" }]}
-        kicker="About the shop"
-        title="Passion, performance and presentation."
+        kicker="Passion, performance & presentation"
+        title="About Paul’s Paddock"
         intro="Our mission is simple: reliable, high-performance automotive care with expert craftsmanship and real customer service."
       />
 
@@ -66,7 +66,7 @@ export default function AboutPage() {
           </figure>
           <div className="lg:col-span-7 lg:pt-6">
             <h2 className="display text-[clamp(2.5rem,5vw,4rem)]">
-              Every car deserves the best.
+              Who we are
             </h2>
             <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-[#2c2c2a]">
               <p>
@@ -110,7 +110,7 @@ export default function AboutPage() {
       <section className="bg-paper">
         <div className="wrap section-y">
           <p className="kicker text-paper-muted">In the shop</p>
-          <h2 className="display mt-4 text-[clamp(2.5rem,5vw,4rem)]">Real cars, real work.</h2>
+          <h2 className="display mt-4 text-[clamp(2.5rem,5vw,4rem)]">Inside the shop</h2>
           <ul className="mt-12 grid gap-3 sm:grid-cols-3 sm:gap-4">
             {GALLERY.map(({ key, className }) => {
               const photo = PHOTOS[key];
@@ -133,7 +133,7 @@ export default function AboutPage() {
       <section className="border-y border-paper-line bg-paper-2">
         <div className="wrap section-y">
           <p className="kicker text-paper-muted">What to expect</p>
-          <h2 className="display mt-4 text-[clamp(2.5rem,5vw,4rem)]">How a visit works.</h2>
+          <h2 className="display mt-4 text-[clamp(2.5rem,5vw,4rem)]">How a visit works</h2>
           <div className="mt-12">
             <ProcessSteps />
           </div>

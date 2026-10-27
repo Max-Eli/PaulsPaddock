@@ -15,7 +15,7 @@ export default function PrivacyPage() {
     <>
       <PageHero
         crumbs={[{ name: "Privacy policy", href: "/privacy" }]}
-        title="Privacy policy."
+        title="Privacy policy"
         intro={`Last updated ${UPDATED}.`}
       />
       <section className="bg-paper">

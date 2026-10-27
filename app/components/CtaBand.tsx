@@ -3,7 +3,7 @@ import { Stripe } from "@/app/components/Stripe";
 import { BRAND } from "@/app/lib/content";
 
 export function CtaBand({
-  title = "Tell us what the car is doing.",
+  title = "Book a service today",
   service,
 }: {
   title?: string;

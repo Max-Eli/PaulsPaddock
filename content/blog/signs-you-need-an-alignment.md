@@ -4,7 +4,7 @@ description: A crooked steering wheel, a pull to one side and uneven tire wear a
 date: 2026-10-24
 category: Tires & Alignment
 photo: m4Lift
-service: tires-alignment
+service: wheel-alignment
 ---
 
 Wheel alignment is easy to put off because the car still drives. But a car that's out of alignment wears through tires faster, wastes fuel and doesn't handle the way it should.
@@ -27,7 +27,7 @@ A four-wheel alignment measures and adjusts all four wheels, which matters on ca
 - The tires squeal in gentle turns.
 - The steering feels loose or the car wanders.
 
-A vibration at highway speed is usually a wheel balance problem rather than alignment. [Balancing](/services/tires-alignment) fixes that.
+A vibration at highway speed is usually a wheel balance problem rather than alignment. [Wheel balancing](/services/tire-mounting-balancing) fixes that.
 
 ## When to get one, even without symptoms
 
@@ -46,4 +46,4 @@ An alignment only holds if the parts holding the wheels are in good shape. Worn 
 
 ## The bottom line
 
-If the wheel is crooked or the tires are wearing unevenly, an alignment will usually pay for itself in tire life. A four-wheel alignment at Paul's Paddock is $160. [Book an alignment](/book?service=alignment).
+If the wheel is crooked or the tires are wearing unevenly, an alignment will usually pay for itself in tire life. A four-wheel alignment at Paul's Paddock is $160. [Book an alignment](/book?service=alignment) or read more about our [wheel alignment](/services/wheel-alignment) service.

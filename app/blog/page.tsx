@@ -26,7 +26,7 @@ export default function BlogPage() {
       <PageHero
         crumbs={[{ name: "Blog", href: "/blog" }]}
         kicker="From the Paddock"
-        title="Advice from the shop floor."
+        title="Car care blog"
         intro="Plain-English articles on keeping your BMW, or whatever you drive, healthy in Florida. Written by the people who fix them."
       >
         <ul className="flex flex-wrap gap-2">
@@ -52,7 +52,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <CtaBand title="Rather we take a look?" />
+      <CtaBand title="Need us to take a look?" />
     </>
   );
 }

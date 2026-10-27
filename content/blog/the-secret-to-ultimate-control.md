@@ -45,4 +45,4 @@ Whenever parts that locate the wheel are replaced, the alignment changes. Skippi
 
 ## The bottom line
 
-If the car clunks, wanders or eats tires, the suspension is trying to tell you something. See our [suspension repair](/services/suspension-repair) and [alignment](/services/tires-alignment) services, or [book an inspection](/book?service=suspension).
+If the car clunks, wanders or eats tires, the suspension is trying to tell you something. See our [suspension repair](/services/suspension-repair) and [alignment](/services/wheel-alignment) services, or [book an inspection](/book?service=suspension).

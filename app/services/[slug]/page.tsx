@@ -4,6 +4,7 @@ import { Arrow } from "@/app/components/Arrow";
 import { CtaBand } from "@/app/components/CtaBand";
 import { FaqList } from "@/app/components/FaqList";
 import { JsonLd } from "@/app/components/JsonLd";
+import { MakesStrip } from "@/app/components/MakesStrip";
 import { PageHero } from "@/app/components/PageHero";
 import { ReviewsLine } from "@/app/components/Reviews";
 import { ServiceTiles } from "@/app/components/ServiceGrid";
@@ -11,7 +12,7 @@ import { getAllPosts } from "@/app/lib/blog";
 import { ADDRESS_ONE_LINE, AREAS_SERVED, BRAND } from "@/app/lib/content";
 import { PHOTOS } from "@/app/lib/photos";
 import { BUSINESS_ID, pageMetadata } from "@/app/lib/seo";
-import { getService, SERVICES } from "@/app/lib/services";
+import { CATEGORIES, getService, SERVICES } from "@/app/lib/services";
 
 export const dynamicParams = false;
 
@@ -41,6 +42,7 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
     .filter((s) => s !== undefined);
   const posts = getAllPosts().filter((p) => service.posts.includes(p.slug));
   const bookHref = `/book?service=${service.bookingValue}`;
+  const category = CATEGORIES.find((c) => c.id === service.category)?.name ?? "Service";
   const priced = service.prices.filter((p) => p.value.includes("$"));
 
   const schema = {
@@ -70,7 +72,7 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
           { name: "Services", href: "/services" },
           { name: service.shortName, href: `/services/${service.slug}` },
         ]}
-        kicker={`Service · ${BRAND.address.city}, ${BRAND.address.region}`}
+        kicker={`${category} · ${BRAND.address.city}, ${BRAND.address.region}`}
         title={service.name}
         intro={service.intro}
         photo={PHOTOS[service.photo]}
@@ -99,7 +101,9 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
       <section className="bg-paper">
         <div className="wrap section-y grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-7 xl:col-span-8">
-            <h2 className="display text-[clamp(2.5rem,5vw,4rem)]">{service.headline}</h2>
+            <h2 className="text-3xl font-semibold leading-tight lg:text-4xl">
+              {service.name} at {BRAND.name}
+            </h2>
             <div className="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed text-[#2c2c2a]">
               {service.overview.map((p) => (
                 <p key={p.slice(0, 24)}>{p}</p>
@@ -139,7 +143,11 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
               )}
             </div>
 
-            <div className="mt-20">
+            <div className="mt-16 border-t border-paper-line pt-12">
+              <MakesStrip />
+            </div>
+
+            <div className="mt-16">
               <h2 className="text-3xl font-semibold">Questions about {service.shortName.toLowerCase()}</h2>
               <div className="mt-8">
                 <FaqList faqs={service.faqs} />

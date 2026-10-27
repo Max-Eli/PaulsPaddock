@@ -19,7 +19,7 @@ export default function ContactPage() {
       <PageHero
         crumbs={[{ name: "Contact", href: "/contact" }]}
         kicker="Contact"
-        title="Get in touch."
+        title="Contact us"
         intro="Call the shop, send a message or stop by. For appointments, the fastest route is booking online."
       >
         <div className="flex flex-wrap gap-3">
@@ -120,7 +120,7 @@ export default function ContactPage() {
         <div className="wrap section-y grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <p className="kicker text-paper-muted">Areas served</p>
-            <h2 className="display mt-4 text-[clamp(2.5rem,5vw,4rem)]">All of Brevard County.</h2>
+            <h2 className="display mt-4 text-[clamp(2.5rem,5vw,4rem)]">Areas we serve</h2>
           </div>
           <ul className="grid grid-cols-2 gap-px border border-paper-line bg-paper-line sm:grid-cols-3 lg:col-span-8">
             {AREAS_SERVED.map((area) => (

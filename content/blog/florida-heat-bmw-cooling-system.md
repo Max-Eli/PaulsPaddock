@@ -4,7 +4,7 @@ description: Florida summers push cooling systems hard. Why BMW water pumps, the
 date: 2026-10-13
 category: BMW
 photo: sunset
-service: engine-repair
+service: cooling-system-repair
 ---
 
 Brevard County summers mean months of 90-degree days, heavy humidity and stop-and-go traffic on US-1 and I-95. The cooling system works hard here almost all year, and on a BMW it's one of the systems most worth keeping an eye on.
@@ -48,4 +48,4 @@ Most modern engines are aluminum. It's light and sheds heat well, but it doesn't
 
 ## The bottom line
 
-In Florida, the cooling system is not the place to wait and see. If you're seeing warnings or topping up coolant, [book a diagnostic](/book?service=diagnostic) or read about our [engine and cooling repairs](/services/engine-repair).
+In Florida, the cooling system is not the place to wait and see. If you're seeing warnings or topping up coolant, [book a diagnostic](/book?service=diagnostic) or read about our [cooling system repair](/services/cooling-system-repair) service.

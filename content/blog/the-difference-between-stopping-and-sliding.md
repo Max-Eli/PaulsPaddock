@@ -4,7 +4,7 @@ description: Brake fluid absorbs water over time, which lowers its boiling point
 date: 2026-09-08
 category: Brakes
 photo: liftBrakes
-service: brake-repair
+service: brake-fluid-flush
 ---
 
 Your brakes are the most important safety system on your car. When most people think about brakes, they think about pads and rotors, and those matter. But the fluid that connects your foot to the calipers plays just as big a role in how well the car stops, and it's the part of brake maintenance that gets skipped most often.
@@ -50,4 +50,4 @@ We check fluid condition whenever we inspect brakes, along with pads, rotors, ca
 
 Pads and rotors are what you hear about. Fluid is what makes them work. If it's been more than two years, it's due.
 
-[Book a brake service](/book?service=brakes) or read more about our [brake repair work](/services/brake-repair).
+[Book a brake service](/book?service=brakes) or read more about our [brake repair](/services/brake-repair) and [brake fluid flush](/services/brake-fluid-flush) services.

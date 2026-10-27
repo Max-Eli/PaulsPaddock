@@ -41,14 +41,14 @@ export default function PricingPage() {
       <PageHero
         crumbs={[{ name: "Pricing", href: "/pricing" }]}
         kicker="Pricing"
-        title="Posted prices. No guesswork."
+        title="Auto repair prices"
         intro="The jobs we do every day have published prices. Everything else gets a clear quote before we pick up a wrench."
       />
 
       <section className="bg-paper">
         <div className="wrap section-y grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <h2 className="display text-[clamp(2.5rem,5vw,4rem)]">Shop menu</h2>
+            <h2 className="display text-[clamp(2.5rem,5vw,4rem)]">Posted prices</h2>
             <p className="mt-6 max-w-sm text-lg leading-relaxed text-paper-muted">
               Each of these takes about an hour. Book online and pick the
               service, or call {BRAND.phone}.

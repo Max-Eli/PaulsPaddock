@@ -4,7 +4,7 @@ description: Valve cover and oil filter housing gasket leaks are two of the most
 date: 2026-10-06
 category: BMW
 photo: g30Hood
-service: engine-repair
+service: oil-leak-repair
 ---
 
 Own a BMW long enough and there's a good chance you'll smell burning oil after a drive or spot oil where it shouldn't be. Two leaks account for a large share of it: the valve cover gasket and the oil filter housing gasket.
@@ -52,4 +52,4 @@ Both jobs mean removing the parts in the way, cleaning the sealing surfaces prop
 
 ## The bottom line
 
-Small BMW oil leaks are normal wear, but they don't stay small, and the oil filter housing in particular can take out a belt. If you smell oil or see drips, [book an inspection](/book?service=engine) or read more about our [BMW repair](/bmw-repair) work.
+Small BMW oil leaks are normal wear, but they don't stay small, and the oil filter housing in particular can take out a belt. If you smell oil or see drips, [book an inspection](/book?service=engine) or see our [oil leak repair](/services/oil-leak-repair) service and [BMW repair](/bmw-repair) page.

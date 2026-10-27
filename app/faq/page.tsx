@@ -19,7 +19,7 @@ export default function FaqPage() {
       <PageHero
         crumbs={[{ name: "FAQ", href: "/faq" }]}
         kicker="FAQ"
-        title="Questions, answered."
+        title="Frequently asked questions"
         intro="Booking, pricing, warranties and the cars we work on. If your question isn’t here, call the shop."
       />
 

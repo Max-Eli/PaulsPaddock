@@ -50,8 +50,8 @@ We'll tell you plainly which side of that line we think you're on.
 
 ## Prevention is much cheaper
 
-Most catastrophic engine failures come with warnings: an overheat that was driven through, an oil level that was allowed to drop, a leak that was ignored for a year. Regular [oil service](/services/oil-change-maintenance), cooling system maintenance and fixing leaks early prevent most of them.
+Most catastrophic engine failures come with warnings: an overheat that was driven through, an oil level that was allowed to drop, a leak that was ignored for a year. Regular [oil service](/services/oil-change), [cooling system maintenance](/services/cooling-system-repair) and fixing leaks early prevent most of them.
 
 ## The bottom line
 
-A major engine problem is a decision, not a verdict. We handle every scale of engine repair and replacement at a fair labor rate. See our [engine repair service](/services/engine-repair) or [call the shop](tel:+13212225486) to talk it through.
+A major engine problem is a decision, not a verdict. We handle every scale of engine repair and replacement at a fair labor rate. See our [engine repair](/services/engine-repair) and [engine replacement](/services/engine-replacement) services or [call the shop](tel:+13212225486) to talk it through.

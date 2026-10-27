@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BRAND, DIRECTIONS_URL } from "@/app/lib/content";
-import { SERVICES } from "@/app/lib/services";
+import { AREAS_SERVED, BRAND, DIRECTIONS_URL } from "@/app/lib/content";
+import { MAKE_LINKS } from "@/app/lib/makes";
+import { POPULAR_SERVICES } from "@/app/lib/services";
 
 const COMPANY = [
-  { href: "/bmw-repair", label: "BMW repair" },
+  { href: "/services", label: "All services" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About the shop" },
   { href: "/blog", label: "Blog" },
@@ -81,17 +82,35 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div className="grid gap-10 sm:grid-cols-3 lg:col-span-8">
+        <div className="grid gap-10 sm:grid-cols-2 lg:col-span-8 xl:grid-cols-4">
           <div>
-            <h2 className="kicker text-ink-muted">Services</h2>
+            <h2 className="kicker text-ink-muted">Popular services</h2>
             <ul className="mt-5 space-y-2.5 text-sm">
-              {SERVICES.map((s) => (
+              {POPULAR_SERVICES.map((s) => (
                 <li key={s.slug}>
                   <Link href={`/services/${s.slug}`} className="text-paper/85 hover:text-paper hover:underline">
                     {s.shortName}
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="kicker text-ink-muted">Makes</h2>
+            <ul className="mt-5 space-y-2.5 text-sm">
+              {MAKE_LINKS.map((m) => (
+                <li key={m.href}>
+                  <Link href={m.href} className="text-paper/85 hover:text-paper hover:underline">
+                    {m.name} repair
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/european-auto-repair" className="text-paper/85 hover:text-paper hover:underline">
+                  European auto repair
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -147,6 +166,13 @@ export function SiteFooter() {
             </p>
           </div>
         </div>
+      </div>
+
+      <div className="border-t border-ink-line">
+        <p className="wrap py-6 text-xs leading-relaxed text-ink-muted">
+          <span className="font-semibold text-paper/80">Serving Brevard County:</span>{" "}
+          {AREAS_SERVED.join(" · ")}
+        </p>
       </div>
 
       <div className="border-t border-ink-line">

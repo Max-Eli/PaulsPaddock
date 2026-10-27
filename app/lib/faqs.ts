@@ -49,7 +49,7 @@ export const FAQ_GROUPS: { title: string; faqs: Faq[] }[] = [
     faqs: [
       {
         q: "Do you only work on BMWs?",
-        a: "No. BMW is our specialty, but we service all makes and models.",
+        a: "No. BMW is our specialty, and we also service MINI, Mercedes-Benz, Audi, Volkswagen, Porsche and every other make, foreign or domestic.",
       },
       {
         q: "Do you work on exotic and luxury cars?",

@@ -1,18 +1,19 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Arrow } from "@/app/components/Arrow";
 import { Stripe } from "@/app/components/Stripe";
 import { BRAND, NAV } from "@/app/lib/content";
-import { PHOTOS } from "@/app/lib/photos";
-import { SERVICES } from "@/app/lib/services";
+import { MAKE_LINKS } from "@/app/lib/makes";
+import { CATEGORIES, servicesInCategory } from "@/app/lib/services";
 
 function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
+
+const GROUPS = CATEGORIES.map((c) => ({ ...c, services: servicesInCategory(c.id) }));
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -52,18 +53,16 @@ export function SiteHeader() {
     closeTimer.current = setTimeout(() => setServicesOpen(false), 120);
   };
 
-  const feature = PHOTOS.m3Front;
-
   return (
     <header className="sticky top-0 z-50 bg-ink text-paper">
       <div className="wrap flex h-16 items-center justify-between gap-6 lg:h-[4.5rem]">
-        <Link href="/" className="flex items-center gap-3" onClick={closeAll}>
+        <Link href="/" className="flex shrink-0 items-center gap-3" onClick={closeAll}>
           <Stripe className="h-4 w-6 -skew-x-12" />
           <span className="wordmark text-[0.95rem]">{BRAND.name}</span>
         </Link>
 
         <nav aria-label="Main" className="hidden h-full lg:block">
-          <ul className="flex h-full items-center gap-8 text-sm">
+          <ul className="flex h-full items-center gap-6 text-sm xl:gap-8">
             {NAV.map((item) =>
               item.href === "/services" ? (
                 <li
@@ -101,7 +100,7 @@ export function SiteHeader() {
                     href={item.href}
                     onClick={closeAll}
                     aria-current={isActive(pathname, item.href) ? "page" : undefined}
-                    className={`transition-colors hover:text-paper ${
+                    className={`whitespace-nowrap transition-colors hover:text-paper ${
                       isActive(pathname, item.href) ? "text-paper" : "text-paper/70"
                     }`}
                   >
@@ -113,10 +112,10 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden shrink-0 items-center gap-6 md:flex">
           <a
             href={BRAND.phoneHref}
-            className="font-mono text-sm tracking-tight text-paper/85 hover:text-paper"
+            className="font-mono text-sm tracking-tight text-paper/85 hover:text-paper lg:hidden xl:inline"
           >
             {BRAND.phone}
           </a>
@@ -153,54 +152,66 @@ export function SiteHeader() {
         }`}
       >
         <div className="wrap grid grid-cols-12 gap-10 py-10">
-          <ul className="col-span-8 grid grid-cols-3 gap-x-8 gap-y-1">
-            {SERVICES.map((s) => (
-              <li key={s.slug}>
+          <div className="col-span-9 grid grid-cols-3 gap-x-10 gap-y-9">
+            {GROUPS.map((group) => (
+              <div key={group.id}>
                 <Link
-                  href={`/services/${s.slug}`}
+                  href={`/services#${group.id}`}
                   onClick={closeAll}
-                  className="block -mx-3 px-3 py-3 transition-colors hover:bg-ink-2"
+                  className="kicker text-ink-muted hover:text-paper"
                 >
-                  <span className="block font-semibold">{s.shortName}</span>
-                  <span className="mt-1 block text-sm leading-snug text-ink-muted">
-                    {s.navBlurb}
-                  </span>
+                  {group.name}
                 </Link>
-              </li>
+                <ul className="mt-3">
+                  {group.services.map((s) => (
+                    <li key={s.slug}>
+                      <Link
+                        href={`/services/${s.slug}`}
+                        onClick={closeAll}
+                        className="block py-1.5 text-[0.95rem] text-paper/85 transition-colors hover:text-paper"
+                      >
+                        {s.shortName}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-            <li className="col-span-3 mt-4 flex gap-8 border-t border-ink-line pt-5 text-sm">
-              <Link href="/services" onClick={closeAll} className="group inline-flex items-center gap-2 font-semibold">
-                All services <Arrow className="group-hover:translate-x-1" />
-              </Link>
-              <Link href="/pricing" onClick={closeAll} className="group inline-flex items-center gap-2 font-semibold">
-                Posted prices <Arrow className="group-hover:translate-x-1" />
-              </Link>
-            </li>
-          </ul>
-          <Link
-            href="/bmw-repair"
-            onClick={closeAll}
-            className="group relative col-span-4 block overflow-hidden"
-          >
-            <Image
-              src={feature.src}
-              alt={feature.alt}
-              width={feature.width}
-              height={feature.height}
-              sizes="400px"
-              loading="eager"
-              className="aspect-[4/3] h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-[1.03] group-hover:opacity-100"
-            />
-            <span className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent" />
-            <span className="absolute inset-x-0 bottom-0 p-6">
-              <span className="kicker text-paper/70">The specialty</span>
-              <span className="display mt-2 block text-4xl">BMW repair</span>
-              <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold">
-                Every series, every generation
-                <Arrow className="group-hover:translate-x-1" />
-              </span>
-            </span>
-          </Link>
+          </div>
+          <div className="col-span-3 border-l border-ink-line pl-10">
+            <Link
+              href="/european-auto-repair"
+              onClick={closeAll}
+              className="kicker text-ink-muted hover:text-paper"
+            >
+              Makes we service
+            </Link>
+            <ul className="mt-3">
+              {MAKE_LINKS.map((m) => (
+                <li key={m.href}>
+                  <Link
+                    href={m.href}
+                    onClick={closeAll}
+                    className="display block py-1 text-2xl text-paper/85 transition-colors hover:text-paper"
+                  >
+                    {m.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-sm text-ink-muted">And every other make.</p>
+          </div>
+          <div className="col-span-12 flex gap-8 border-t border-ink-line pt-6 text-sm">
+            <Link href="/services" onClick={closeAll} className="group inline-flex items-center gap-2 font-semibold">
+              All services <Arrow className="group-hover:translate-x-1" />
+            </Link>
+            <Link href="/pricing" onClick={closeAll} className="group inline-flex items-center gap-2 font-semibold">
+              Posted prices <Arrow className="group-hover:translate-x-1" />
+            </Link>
+            <Link href="/european-auto-repair" onClick={closeAll} className="group inline-flex items-center gap-2 font-semibold">
+              European auto repair <Arrow className="group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -227,37 +238,34 @@ export function SiteHeader() {
                     </span>
                   </button>
                   {mobileServicesOpen && (
-                    <ul className="pb-4">
-                      <li>
-                        <Link
-                          href="/services"
-                          onClick={closeAll}
-                          className="block py-2.5 font-semibold"
-                        >
-                          All services
-                        </Link>
-                      </li>
-                      {SERVICES.map((s) => (
-                        <li key={s.slug}>
-                          <Link
-                            href={`/services/${s.slug}`}
-                            onClick={closeAll}
-                            className="block py-2.5 text-paper/80"
-                          >
-                            {s.shortName}
-                          </Link>
-                        </li>
+                    <div className="space-y-6 pb-6">
+                      <Link href="/services" onClick={closeAll} className="block font-semibold">
+                        All services
+                      </Link>
+                      {GROUPS.map((group) => (
+                        <div key={group.id}>
+                          <p className="kicker text-ink-muted">{group.name}</p>
+                          <ul className="mt-2">
+                            {group.services.map((s) => (
+                              <li key={s.slug}>
+                                <Link
+                                  href={`/services/${s.slug}`}
+                                  onClick={closeAll}
+                                  className="block py-2 text-paper/80"
+                                >
+                                  {s.shortName}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   )}
                 </li>
               ) : (
                 <li key={item.href} className="border-b border-ink-line">
-                  <Link
-                    href={item.href}
-                    onClick={closeAll}
-                    className="display block py-4 text-3xl"
-                  >
+                  <Link href={item.href} onClick={closeAll} className="display block py-4 text-3xl">
                     {item.label}
                   </Link>
                 </li>

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/app/lib/blog";
 import { BRAND } from "@/app/lib/content";
+import { MAKE_LINKS } from "@/app/lib/makes";
 import { SERVICES } from "@/app/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -15,7 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.9,
     })),
-    { url: url("/bmw-repair"), changeFrequency: "monthly", priority: 0.9 },
+    { url: url("/european-auto-repair"), changeFrequency: "monthly", priority: 0.9 },
+    ...MAKE_LINKS.map((m) => ({
+      url: url(m.href),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })),
     { url: url("/pricing"), changeFrequency: "monthly", priority: 0.8 },
     { url: url("/book"), changeFrequency: "yearly", priority: 0.8 },
     { url: url("/contact"), changeFrequency: "yearly", priority: 0.7 },

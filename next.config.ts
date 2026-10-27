@@ -10,6 +10,12 @@ const WIX_BOOKING_SLUGS: Record<string, string> = {
 };
 
 const nextConfig: NextConfig = {
+  // Blog posts are read from disk. Every page that reads them is prerendered
+  // today, but ship the Markdown with server functions too so a page that
+  // later becomes dynamic on Vercel still finds them.
+  outputFileTracingIncludes: {
+    "/*": ["./content/blog/**/*"],
+  },
   // Keep links from the old Wix site (Google results, the Google Business
   // profile, bookmarks) landing somewhere useful.
   async redirects() {
@@ -24,6 +30,10 @@ const nextConfig: NextConfig = {
       ),
       { source: "/booking-calendar/:slug", destination: "/book", permanent: true },
       { source: "/service-page/:slug", destination: "/book", permanent: true },
+      // Service pages that were split into more specific pages.
+      { source: "/services/oil-change-maintenance", destination: "/services/oil-change", permanent: true },
+      { source: "/services/diagnostics", destination: "/services/check-engine-light", permanent: true },
+      { source: "/services/tires-alignment", destination: "/services/wheel-alignment", permanent: true },
       // The old blog posts were rebuilt under the same slugs.
       { source: "/post/:slug", destination: "/blog/:slug", permanent: true },
       { source: "/blog-feed.xml", destination: "/blog/feed.xml", permanent: true },

@@ -4,7 +4,7 @@ description: BMW's service indicator can allow long oil change intervals. Why ma
 date: 2026-10-20
 category: Maintenance
 photo: silver3
-service: oil-change-maintenance
+service: oil-change
 ---
 
 Few maintenance questions cause as much debate among BMW owners as this one. The car's computer says one thing, forums say another, and the stakes are an expensive engine.
@@ -37,4 +37,4 @@ Many BMWs don't have a traditional dipstick. The oil level is checked electronic
 
 Use your car's service indicator as the latest you'd ever change the oil, not the plan. For a turbocharged BMW driven through Florida summers, a shorter interval is an easy call.
 
-An oil change at Paul's Paddock is $60 and takes about an hour. [Book an oil change](/book?service=oil-change) or see our [maintenance services](/services/oil-change-maintenance).
+An oil change at Paul's Paddock is $60 and takes about an hour. [Book an oil change](/book?service=oil-change) or see our [scheduled maintenance](/services/scheduled-maintenance) service.

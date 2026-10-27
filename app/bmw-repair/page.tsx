@@ -30,7 +30,7 @@ export default function BmwPage() {
       <PageHero
         crumbs={[{ name: "BMW repair", href: "/bmw-repair" }]}
         kicker="The specialty"
-        title="BMW repair & service in Palm Bay."
+        title="BMW repair & service in Palm Bay"
         intro="BMWs are what we know best. Independent specialist service for every series, from a daily-driven 3 Series to an M car, at an independent shop’s labor rate."
         photo={PHOTOS.m3Front}
       >
@@ -48,7 +48,7 @@ export default function BmwPage() {
           <div className="lg:col-span-6">
             <p className="kicker text-paper-muted">Why a specialist</p>
             <h2 className="display mt-4 text-[clamp(2.5rem,5vw,4rem)]">
-              Knowing the car saves you money.
+              Why choose a BMW specialist
             </h2>
           </div>
           <div className="space-y-5 text-lg leading-relaxed text-[#2c2c2a] lg:col-span-6">
@@ -74,7 +74,7 @@ export default function BmwPage() {
             <div className="lg:col-span-7">
               <p className="kicker text-ink-muted">What we fix most</p>
               <h2 className="display mt-4 text-[clamp(2.5rem,5vw,4rem)]">
-                Common BMW problems.
+                Common BMW problems we fix
               </h2>
             </div>
             <p className="max-w-md text-lg leading-relaxed text-paper/80 lg:col-span-5">
@@ -105,7 +105,7 @@ export default function BmwPage() {
           <div className="lg:col-span-5">
             <p className="kicker text-paper-muted">Models</p>
             <h2 className="display mt-4 text-[clamp(2.5rem,5vw,4rem)]">
-              Every series, every generation.
+              BMW models we service
             </h2>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-paper-muted">
               Sedans, coupes, SAVs and M cars. If it wears the roundel, bring it
@@ -178,7 +178,7 @@ export default function BmwPage() {
         </div>
       </section>
 
-      <CtaBand title={`Bring your BMW to ${BRAND.name}.`} />
+      <CtaBand title={`Bring your BMW to ${BRAND.name}`} />
     </>
   );
 }

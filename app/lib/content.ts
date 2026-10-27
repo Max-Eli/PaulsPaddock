@@ -57,6 +57,7 @@ export const AREAS_SERVED = [
 export const NAV = [
   { href: "/services", label: "Services" },
   { href: "/bmw-repair", label: "BMW" },
+  { href: "/european-auto-repair", label: "European" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
@@ -81,7 +82,7 @@ export const PRICES: PricedService[] = [
     time: "1 hr",
     price: "$60",
     detail: "Oil to your engine’s spec, new filter and a look at fluids, belts and tires.",
-    href: "/services/oil-change-maintenance",
+    href: "/services/oil-change",
   },
   {
     slug: "diagnostic",
@@ -89,7 +90,7 @@ export const PRICES: PricedService[] = [
     time: "1 hr",
     price: "$100",
     detail: "Full scan, fault codes and testing to find the actual cause.",
-    href: "/services/diagnostics",
+    href: "/services/check-engine-light",
   },
   {
     slug: "tire-mount-balance",
@@ -97,7 +98,7 @@ export const PRICES: PricedService[] = [
     time: "1 hr",
     price: "$30",
     detail: "Mount and balance. Available 7 days a week, 24 hours. Call first.",
-    href: "/services/tires-alignment",
+    href: "/services/tire-mounting-balancing",
   },
   {
     slug: "brakes",
@@ -114,14 +115,16 @@ export const PRICES: PricedService[] = [
     time: "1 hr",
     price: "$160",
     detail: "Camber, caster and toe set on all four wheels.",
-    href: "/services/tires-alignment",
+    href: "/services/wheel-alignment",
   },
 ];
 
 // Options for the booking form's service dropdown.
 export const BOOKING_OPTIONS = [
   ...PRICES.map((p) => ({ value: p.slug, label: p.name })),
-  { value: "engine", label: "Engine repair" },
+  { value: "maintenance", label: "Scheduled maintenance" },
+  { value: "engine", label: "Engine repair, leaks or overheating" },
+  { value: "electrical", label: "Electrical, battery or won’t start" },
   { value: "suspension", label: "Suspension" },
   { value: "luxury", label: "Exotic / luxury car service" },
   { value: "detailing", label: "Detailing" },
